@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
  * Main Block
  * A program that prints _putchar
  * Returns 0
  */
+
 int main(void)
 {
 	_putchar('_');
