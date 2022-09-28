@@ -1,27 +1,31 @@
 #include "main.h"
 
 /**
- * is_prime_number - returns 1 if the input integer is a prime number, otherwise return 0.
- * @n: input number.
- * Return: int
+ * is_prime_number - returns 1 if the input integer is a prime number, otherwise returns 0.
+ * @n: number.
+ * Return: int.
  */
 int is_prime_number(int n)
 {
-	if (n <= 1)
+	int i = 2;
+
+	if (n <= 2)
+		return (n == 2 ? 1 : 0);
+	if (n % 2 == 0)
 		return (0);
-	return (getNumPrim(n, 2));
+	return (is_prime(n, i));
 }
 /**
- * getNumPrim - function that gets if num is 0 or 1
- * @num: input number
- * @i: Counter variable
+ * is_prime - returns 1 if the input integer is a prime number, otherwise returns 0.
+ * @n: number
+ * @i: dividend
  * Return: int
  */
-int getNumPrim(int num, int i)
+int is_prime(int n, int i)
 {
-	if (num == i)
-		return (1);
-	if (num % i == 0)
+	if (n != i && n % i == 0)
 		return (0);
-	return (getNumPrim(num, i + 1));
+	else if (n == i)
+		return (1);
+	return (is_prime(n, i + 1));
 }
