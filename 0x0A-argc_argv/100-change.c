@@ -2,16 +2,17 @@
 #include <stdlib.h>
 
 /**
- * main - prints the minimum number of coins to make change for an amount of money.
- * @argc: number of command line arguments.
+ * main - prints coins left.
+ * @args: Parameter entry
  * @argv: array that contains the program command line arguments.
  * Return: 0 - success.
  */
+
 int main(int args, char *argv[])
 {
 	int c, coins = 0;
 
-	if(args != 2)
+	if (args != 2)
 	{
 		printf("Error\n");
 		return (1);
